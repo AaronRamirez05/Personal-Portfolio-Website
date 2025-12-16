@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Experience() {
   const fadeInUp = {
@@ -42,9 +43,11 @@ export default function Experience() {
 
               {/* Image */}
               <div className="w-full rounded-lg overflow-hidden mb-4 flex items-center justify-center">
-                <img
+                <Image
                   src="/courthouse.jpg"
                   alt="Hidalgo County Courthouse"
+                  width={800}
+                  height={600}
                   className="max-w-full h-auto rounded-lg"
                 />
               </div>
@@ -78,9 +81,11 @@ export default function Experience() {
 
               {/* Image */}
               <div className="w-full rounded-lg overflow-hidden mb-4 flex items-center justify-center">
-                <img
+                <Image
                   src="/mbue.png"
                   alt="mbue AI Quality Control"
+                  width={800}
+                  height={600}
                   className="max-w-full h-auto rounded-lg"
                 />
               </div>

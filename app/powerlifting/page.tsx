@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 interface Lift {
   name: string;
@@ -91,10 +92,13 @@ export default function Powerlifting() {
           <div className="mb-16">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative overflow-hidden rounded-lg border border-accent/30 shadow-2xl shadow-accent/20">
-                <img
+                <Image
                   src="/AaronPowerlift.jpeg"
                   alt="Aaron at powerlifting competition"
+                  width={800}
+                  height={1000}
                   className="w-full h-auto object-cover"
+                  priority
                 />
               </div>
 

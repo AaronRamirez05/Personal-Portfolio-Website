@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <div className="pt-16">
@@ -35,7 +37,14 @@ export default function Home() {
             <div className="flex justify-center md:justify-end">
               <div className="w-80 h-80 rounded-full bg-gradient-to-br from-accent via-accent-purple to-accent-pink p-1 shadow-2xl shadow-accent/50">
                 <div className="w-full h-full rounded-full bg-card-bg flex items-center justify-center overflow-hidden">
-                  <img src="/profile.jpeg" alt="Aaron Ramirez" className="w-full h-full object-cover" />
+                  <Image
+                    src="/profile.jpeg"
+                    alt="Aaron Ramirez"
+                    width={320}
+                    height={320}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -75,10 +84,13 @@ export default function Home() {
       {/* GIF Section - Centered vertically between sections */}
       <section className="px-6 py-1">
         <div className="max-w-4xl w-full mx-auto space-y-4">
-          <img
+          <Image
             src="/git-shown.gif"
             alt="Git Demo"
+            width={800}
+            height={600}
             className="w-2/3 h-auto rounded-lg shadow-lg shadow-accent/20 border border-accent/30"
+            unoptimized
           />
           <a
             href="https://github.com/AaronRamirez05"

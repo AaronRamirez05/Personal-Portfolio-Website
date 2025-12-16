@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Projects() {
   const fadeInUp = {
@@ -58,10 +59,13 @@ export default function Projects() {
 
               {/* GIF on the right side */}
               <div className="flex flex-col items-center justify-center gap-4">
-                <img
+                <Image
                   src="/website-shown.gif"
                   alt="AIM Strength Website Demo"
+                  width={800}
+                  height={600}
                   className="max-w-full h-auto rounded-lg shadow-lg shadow-accent/20 border border-accent/30"
+                  unoptimized
                 />
                 <a href="https://aimpowerlifting.com/" target="_blank" rel="noopener noreferrer" className="text-accent-cyan hover:text-accent-purple transition-colors font-semibold text-lg">Visit Website →</a>
               </div>
