@@ -27,20 +27,20 @@ function Counter({ value, duration = 2 }: { value: number; duration?: number }) 
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
 
+  useEffect(() => {
+    const unsubscribe = rounded.on('change', (latest) => setDisplayValue(latest));
+    return () => unsubscribe();
+  }, [rounded]);
+
   return (
     <motion.span
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, amount: 0.5 }}
       onViewportEnter={() => {
         if (!hasAnimated) {
           setHasAnimated(true);
-          const controls = animate(count, value, { duration });
-          const unsubscribe = rounded.on('change', (latest) => setDisplayValue(latest));
-
-          controls.then(() => {
-            unsubscribe();
-          });
+          animate(count, value, { duration });
         }
       }}
     >
