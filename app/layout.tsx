@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Aaron Ramirez Portfolio",
     images: [
       {
-        url: '/portfolioLogo.png',
+        url: 'https://aaronmramirez.dev/portfolioLogo.png',
         width: 1200,
         height: 630,
         alt: 'Aaron Ramirez Portfolio Logo',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Aaron Ramirez - Software Developer & Engineer",
     description: "Full-stack developer passionate about code and iron. Check out my projects and powerlifting journey.",
-    images: ['/portfolioLogo.png'],
+    images: ['https://aaronmramirez.dev/portfolioLogo.png'],
   },
 };
 
