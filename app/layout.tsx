@@ -3,7 +3,7 @@ import "./globals.css";
 import Navigation from "./components/Navigation";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://personal-portfolio-website.vercel.app'),
+  metadataBase: new URL('https://aaronmramirez.dev'),
   title: "Portfolio - Aaron Ramirez",
   description: "Personal portfolio showcasing my work, resume, and powerlifting journey",
   icons: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aaron Ramirez - Software Developer & Engineer",
     description: "Full-stack developer passionate about code and iron. Check out my projects and powerlifting journey.",
-    url: "https://personal-portfolio-website.vercel.app",
+    url: "https://aaronmramirez.dev",
     siteName: "Aaron Ramirez Portfolio",
     images: [
       {
