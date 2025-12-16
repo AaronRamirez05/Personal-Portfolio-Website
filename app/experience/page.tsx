@@ -6,20 +6,64 @@ export default function Experience() {
         <div className="max-w-4xl w-full">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-accent-cyan to-accent bg-clip-text text-transparent">Experience</h2>
           <div className="space-y-8">
-            {/* Add your experience items here */}
+            {/* Technician II Position */}
             <div className="border border-border bg-card-bg/50 p-6 hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all group backdrop-blur-sm">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-2xl font-semibold text-accent-cyan group-hover:text-accent transition-colors">
-                  Your Position Title
+                  Technician II
                 </h3>
-                <span className="text-sm text-muted">Date Range</span>
+                <span className="text-sm text-muted">APR 2025 - PRESENT</span>
               </div>
-              <p className="text-accent-purple font-semibold mb-3">Company Name</p>
-              <p className="text-muted mb-4">
-                Description of your role and responsibilities...
-              </p>
+              <p className="text-accent-purple font-semibold mb-4">Hidalgo County / Edinburg, Texas</p>
+
+              {/* Image */}
+              <div className="w-full rounded-lg overflow-hidden mb-4 flex items-center justify-center">
+                <img
+                  src="/courthouse.jpg"
+                  alt="Hidalgo County Courthouse"
+                  className="max-w-full h-auto rounded-lg"
+                />
+              </div>
+
+              <ul className="text-muted mb-4 space-y-3 list-disc list-inside">
+                <li>Designed and launched a modern full-stack solution that transformed the county's inmate magistration workflow from a legacy Microsoft Access database into a robust web application. Leveraged React.js for the UI, Node.js to build RESTful APIs, and MSSQL for data persistence—enabling streamlined document processing, clear communication of charges and rights, and digital signature authentication for judicial staff. Successfully rolled out the system across all jail facilities countywide within a two-month timeline, all while maintaining regular IT operations.</li>
+                <li>Delivered comprehensive IT infrastructure support for government personnel in both physical and remote work settings. Automated Windows 11 deployments and system refreshes using PowerShell scripting, implemented security hardening through Group Policy configurations, and administered user provisioning via Active Directory and Goverlan. Handled installation and ongoing support for workstations, peripherals, printing equipment, and specialized government applications while adhering to strict data security standards. Kept meticulous records of hardware inventory and software licensing, resolving a wide range of technical issues across the organization.</li>
+              </ul>
               <div className="flex flex-wrap gap-2">
-                {['Skill 1', 'Skill 2', 'Skill 3'].map((skill) => (
+                {['React.js', 'Node.js', 'MSSQL', 'RESTful API', 'PowerShell', 'Active Directory', 'Windows 11', 'Group Policy', 'Cybersecurity'].map((skill) => (
+                  <span key={skill} className="text-sm px-3 py-1 bg-accent/10 text-accent-purple border border-accent/20 rounded-full">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Lead Computer Vision Annotation Specialist Position */}
+            <div className="border border-border bg-card-bg/50 p-6 hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all group backdrop-blur-sm">
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-2xl font-semibold text-accent-cyan group-hover:text-accent transition-colors">
+                  Lead Computer Vision Annotation Specialist
+                </h3>
+                <span className="text-sm text-muted">SEP 2024 - JAN 2025</span>
+              </div>
+              <p className="text-accent-purple font-semibold mb-4">mbue – AI-based Quality Control for AEC Firms / Remote</p>
+
+              {/* Image */}
+              <div className="w-full rounded-lg overflow-hidden mb-4 flex items-center justify-center">
+                <img
+                  src="/mbue.png"
+                  alt="mbue AI Quality Control"
+                  className="max-w-full h-auto rounded-lg"
+                />
+              </div>
+
+              <ul className="text-muted mb-4 space-y-3 list-disc list-inside">
+                <li>Played a key role in training AI systems for automated architectural document review by establishing comprehensive annotation protocols for construction and design files within CVAT. Processed approximately 100 floor plans and architectural drawings each day, generating high-quality training data to power intelligent quality control systems for the AEC industry.</li>
+                <li>Created detailed labeling frameworks for geometric shapes and descriptive elements to maintain dataset uniformity and precision, allowing machine learning models to accurately recognize and classify architectural components.</li>
+                <li>Earned promotion to lead annotator position in under a month, taking ownership of standardization processes and mentoring team members to ensure consistent, reliable data output across the annotation pipeline.</li>
+              </ul>
+              <div className="flex flex-wrap gap-2">
+                {['Computer Vision', 'CVAT', 'Data Annotation', 'AI/ML', 'Quality Control', 'Team Leadership', 'AEC Industry'].map((skill) => (
                   <span key={skill} className="text-sm px-3 py-1 bg-accent/10 text-accent-purple border border-accent/20 rounded-full">
                     {skill}
                   </span>

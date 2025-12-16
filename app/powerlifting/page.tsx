@@ -35,25 +35,25 @@ export default function Powerlifting() {
   const totalGoal = lifts.reduce((sum, lift) => sum + lift.goal, 0);
 
   return (
-    <div className="pt-20 min-h-screen px-6 py-20">
+    <div className="pt-20 min-h-screen px-6 py-20 bg-gradient-to-br from-background via-accent/5 to-background">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Powerlifting Journey</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-accent-cyan to-accent bg-clip-text text-transparent py-2">Powerlifting Journey</h1>
           <p className="text-xl text-muted">
-            Tracking my progress in the big three lifts
+            This is my powerlifting journey in which I started the sport about 3 years ago, after working on my health and fitness for the past 7 years. This page is meant to show my dedication to the sport and health journey.
           </p>
         </div>
 
         {/* Current Stats */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Current Numbers</h2>
+          <h2 className="text-3xl font-bold mb-8 text-accent-purple">Current Numbers</h2>
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {lifts.map((lift) => {
               const progress = (lift.current / lift.goal) * 100;
               return (
-                <div key={lift.name} className="border border-border p-6 hover:border-white transition-all">
-                  <h3 className="text-2xl font-semibold mb-4">{lift.name}</h3>
+                <div key={lift.name} className="border border-border bg-card-bg/50 p-6 hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all backdrop-blur-sm">
+                  <h3 className="text-2xl font-semibold mb-4 text-accent-cyan">{lift.name}</h3>
                   <div className="space-y-4">
                     <div>
                       <p className="text-sm text-muted mb-1">Current PR</p>
@@ -74,9 +74,9 @@ export default function Powerlifting() {
                         <span>Progress to Goal</span>
                         <span>{progress.toFixed(0)}%</span>
                       </div>
-                      <div className="w-full h-2 bg-border">
+                      <div className="w-full h-2 bg-border rounded-full">
                         <div
-                          className="h-full bg-white transition-all"
+                          className="h-full bg-gradient-to-r from-accent to-accent-purple transition-all rounded-full"
                           style={{ width: `${Math.min(progress, 100)}%` }}
                         />
                       </div>
@@ -88,15 +88,15 @@ export default function Powerlifting() {
           </div>
 
           {/* Total */}
-          <div className="border border-white p-8 bg-white text-black">
+          <div className="border border-accent p-8 bg-gradient-to-r from-accent/20 to-accent-purple/20 backdrop-blur-sm">
             <div className="flex justify-between items-end">
               <div>
-                <h3 className="text-xl font-semibold mb-2">Current Total</h3>
-                <p className="text-5xl font-bold">{totalCurrent} lbs</p>
+                <h3 className="text-xl font-semibold mb-2 text-accent-cyan">Current Total</h3>
+                <p className="text-5xl font-bold text-white">{totalCurrent} lbs</p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-gray-700 mb-1">Goal Total</p>
-                <p className="text-3xl font-semibold">{totalGoal} lbs</p>
+                <p className="text-sm text-muted mb-1">Goal Total</p>
+                <p className="text-3xl font-semibold text-accent-purple">{totalGoal} lbs</p>
               </div>
             </div>
           </div>
@@ -104,8 +104,8 @@ export default function Powerlifting() {
 
         {/* PR History */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">PR History</h2>
-          <div className="border border-border overflow-hidden">
+          <h2 className="text-3xl font-bold mb-8 text-accent-purple">PR History</h2>
+          <div className="border border-border bg-card-bg/50 overflow-hidden backdrop-blur-sm">
             <table className="w-full">
               <thead className="border-b border-border">
                 <tr className="text-left">
@@ -120,7 +120,7 @@ export default function Powerlifting() {
                 {prHistory.map((record, index) => (
                   <tr
                     key={record.date}
-                    className={`hover:bg-white hover:text-black transition-all ${
+                    className={`hover:bg-accent/10 transition-all ${
                       index !== prHistory.length - 1 ? 'border-b border-border' : ''
                     }`}
                   >
@@ -138,18 +138,18 @@ export default function Powerlifting() {
 
         {/* Progress Chart Visual */}
         <section>
-          <h2 className="text-3xl font-bold mb-8">Total Progress Over Time</h2>
-          <div className="border border-border p-8">
+          <h2 className="text-3xl font-bold mb-8 text-accent-purple">Total Progress Over Time</h2>
+          <div className="border border-border bg-card-bg/50 p-8 backdrop-blur-sm">
             <div className="flex items-end justify-between h-64 gap-4">
               {prHistory.reverse().map((record, index) => {
                 const maxTotal = Math.max(...prHistory.map((r) => r.total));
                 const height = (record.total / maxTotal) * 100;
                 return (
                   <div key={record.date} className="flex-1 flex flex-col items-center gap-2">
-                    <div className="text-sm font-mono text-muted mb-2">{record.total} lbs</div>
+                    <div className="text-sm font-mono text-accent-cyan mb-2">{record.total} lbs</div>
                     <div className="w-full flex items-end justify-center" style={{ height: '200px' }}>
                       <div
-                        className="w-full bg-white hover:bg-muted transition-all"
+                        className="w-full bg-gradient-to-t from-accent to-accent-purple hover:from-accent-purple hover:to-accent-pink transition-all"
                         style={{ height: `${height}%` }}
                       />
                     </div>
@@ -168,17 +168,17 @@ export default function Powerlifting() {
 
         {/* Training Philosophy */}
         <section className="mt-16">
-          <h2 className="text-3xl font-bold mb-8">Training Philosophy</h2>
+          <h2 className="text-3xl font-bold mb-8 text-accent-purple">Training Philosophy</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="border border-border p-6">
-              <h3 className="text-xl font-semibold mb-4">Approach</h3>
+            <div className="border border-border bg-card-bg/50 p-6 hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all backdrop-blur-sm">
+              <h3 className="text-xl font-semibold mb-4 text-accent-cyan">Approach</h3>
               <p className="text-muted leading-relaxed">
                 Following a structured progressive overload program with focus on compound movements.
                 Training 4-5 days per week with adequate recovery and nutrition.
               </p>
             </div>
-            <div className="border border-border p-6">
-              <h3 className="text-xl font-semibold mb-4">Goals</h3>
+            <div className="border border-border bg-card-bg/50 p-6 hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all backdrop-blur-sm">
+              <h3 className="text-xl font-semibold mb-4 text-accent-cyan">Goals</h3>
               <p className="text-muted leading-relaxed">
                 Aiming for a 1,220 lbs total (405/315/500) by the end of 2025. Focusing on
                 technique refinement and consistent linear progression.

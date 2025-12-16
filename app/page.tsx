@@ -44,8 +44,8 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="max-w-4xl w-full">
+      <section id="about" className="px-6 py-20">
+        <div className="max-w-4xl w-full mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-accent-cyan to-accent bg-clip-text text-transparent">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-4 text-muted">
@@ -68,6 +68,26 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+
+      </section>
+
+      {/* GIF Section - Centered vertically between sections */}
+      <section className="px-6 py-1">
+        <div className="max-w-4xl w-full mx-auto space-y-4">
+          <img
+            src="/git-shown.gif"
+            alt="Git Demo"
+            className="w-2/3 h-auto rounded-lg shadow-lg shadow-accent/20 border border-accent/30"
+          />
+          <a
+            href="https://github.com/AaronRamirez05"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-accent-cyan hover:text-accent-purple transition-colors font-semibold text-lg"
+          >
+            Visit my GitHub →
+          </a>
         </div>
       </section>
 
