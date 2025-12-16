@@ -1,13 +1,37 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function Projects() {
+  const fadeInUp = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.5 }
+  };
+
   return (
-    <div className="pt-20">
+    <motion.div
+      className="pt-20"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Projects Section */}
       <section className="min-h-screen px-6 py-20 bg-gradient-to-br from-background via-accent/5 to-background">
         <div className="max-w-6xl w-full mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-accent-purple to-accent-pink bg-clip-text text-transparent py-2">Projects</h2>
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-12 bg-gradient-to-r from-accent-purple to-accent-pink bg-clip-text text-transparent py-2 text-center"
+            {...fadeInUp}
+          >
+            Projects
+          </motion.h2>
           <div className="space-y-8">
             {/* AIM Strength Project - with GIF */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <motion.div
+              className="grid md:grid-cols-2 gap-6"
+              {...fadeInUp}
+            >
               {/* Content Box */}
               <div className="border border-border bg-card-bg/50 p-6 hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all group backdrop-blur-sm">
                 <h3 className="text-2xl font-semibold mb-3 text-accent-cyan group-hover:text-accent transition-colors">
@@ -41,7 +65,7 @@ export default function Projects() {
                 />
                 <a href="https://aimpowerlifting.com/" target="_blank" rel="noopener noreferrer" className="text-accent-cyan hover:text-accent-purple transition-colors font-semibold text-lg">Visit Website →</a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Other Projects */}
             {[
@@ -58,9 +82,11 @@ export default function Projects() {
                 color: 'accent-cyan',
               },
             ].map((project, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="border border-border bg-card-bg/50 p-6 hover:border-accent hover:shadow-lg hover:shadow-accent/20 transition-all group backdrop-blur-sm"
+                {...fadeInUp}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <h3 className="text-2xl font-semibold mb-3 text-accent-cyan group-hover:text-accent transition-colors">
                   {project.title}
@@ -73,11 +99,11 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }

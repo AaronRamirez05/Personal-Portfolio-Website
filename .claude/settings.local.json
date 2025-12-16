@@ -12,7 +12,12 @@
       "Bash(npm install:*)",
       "Bash(npx tailwindcss init -p)",
       "Bash(cat:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(findstr:*)",
+      "Bash(copy publicportfolioLogo.png appicon.png)"
     ],
     "deny": [],
     "ask": []
